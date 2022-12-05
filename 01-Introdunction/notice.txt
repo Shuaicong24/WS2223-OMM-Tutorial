@@ -1,0 +1,52 @@
+1. var, let, const
+https://www.freecodecamp.org/chinese/news/javascript-var-let-and-const/
+   1.1 var
+       1.1.1 var can be declared globally or within a function / locally.
+             - When var is declared outside the outermost function, the scope is global.
+             Any variables with var outside the outermost function can be used in windows.
+             - When var is declared in the function, the scope is local. It can only be
+             accessed within a function.
+
+       1.1.2 Hoisting - Variables declared with var are hoisted to the top of their scope
+       and initialized with the undefined value.
+             // Code (works):
+             console.log(greeter);
+             var greeter = 'say hello';
+             // Can be explained as:
+             var greeter;
+             console.log(greeter); // greeter is undefined
+             greeter = 'say hello';
+
+   1.2 let (block scope)
+       1.2.1 block is defined by {}.
+       1.2.2 Hoisting - Variables declared with let are hoisted to the top of their scope
+       and uninitialized. Without using declaration can receive 'Reference Error'.
+
+   1.3 const (constant value, block scope)
+       1.3.1 Cannot be modified and redeclared => Initialization when declaration
+       1.3.2 Cannot update const object, but the properties of the object, e.g. person.name.
+       1.3.3 Hoisting - Variables declared with let are hoisted to the top of their scope
+       and uninitialized.
+
+   1.4 Comparison
+       1.4.1 var is global or functional scope, while let and const are block scope.
+       1.4.2 Variable with var can be modified/updated and redeclared within its scope.
+       Variable with let can be updated but not be redeclared. Variable with const can neither
+       be updated nor be redeclared.
+       1.4.3 Variables declared with all three indicators are hoisted to the top of their
+       scope. Variable var is initialized by variable undefined, not for variable let and const.
+       1.4.4 Although var and let can be declared without initialization, const must be
+       initialized during declaration.
+
+   1.5 From Tutorial script
+       1.5.1 Variables and constants declared with let or const respectively are not hoisted but
+       instead scoped in their respective block.
+       var is hoisted, let isn‘t.
+
+2. Roundup Quiz
+   2.1 Result of [1, 2, 3, 4].map((a) => a * a).reduce((a, b) => a + b)
+       [1, 2, 3, 4].map((a) => a * a) // [1, 4, 9, 16]
+       [2, 4, 9, 16].reduce((a, b) => a + b) // 1 + 4 + 9 + 16 = 30
+
+3. Object Destructuring
+
