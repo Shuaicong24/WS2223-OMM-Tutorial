@@ -1,0 +1,44 @@
+1. HTTP
+   1.1 HTTP Status Codes
+       1xx Informational
+       2xx Success
+       3xx Redirect
+       4xx Client Error
+       5xx Server Error
+   1.2 HTTP Methods
+       GET - Read
+       POST - Create
+       PUT - Full Update
+       PATCH - Partial Update
+       DELETE - Delete
+       HEAD - Just the header please
+       OPTION - Pre-Flight Requests
+
+2. AJAX (Asynchronous JavaScript + XML)
+Allows passing around data between client-and server-side applications back and forth – without refreshing the page
+==> Partial Refresh without loading the full page again
+
+3. XHR (XMLHttpRequest) AJAX request
+Ready States: 0,1,2,3,4(done)
+
+4. fetch (a "new" API, which simplifies AJAX by using Promises)
+
+5. async & await
+await keyword can only be used in the async functions.
+
+6. Postman (A tool to test APIs)
+
+7. Same Origin Policy (SOP)
+A frequent AJAX problem because of violating the Content Security Policy.
+URL: http://example.com
+Different origin:
+    1. https://example.com - Different protocol
+    2. http://www.example.com - Different host
+    3. http://example.com:3830/ - Different port
+    4. http://example.org - Different domain
+
+SOP tries to hamper cross site scripting and would block AJAX request to foreign domain entirely.
+Solutions:
+    1. Cross-Origin Resource Sharing (CORS)
+    2. JSON with Padding (JSONP)
+    3. Apache Reverse Proxies
