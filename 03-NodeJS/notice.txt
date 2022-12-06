@@ -1,0 +1,35 @@
+1. Require
+   1.1 Mind the difference
+       - require('module');
+       - require('./module');
+       ! Without path specification, node tries to import from the node_modules directory (dependencies managed by npm)
+
+2. Express generator
+   2.1 Install the generator globally
+       $ npm install -g express -generator
+       $ express OMMExpressApp
+       $ cd OMMExpressApp && npm install
+       $ npm start
+
+3. Port in Express
+   Defined in bin/www. Default is 3000.
+   Manual set by command $ SET PORT = 8000 && npm start
+
+4. The EADRRINUSE error:
+   - The port is already used by another application
+   - Try a different port (high number) or
+   - Quit the application that’s using the port, e.g. $ killall node
+
+5. Defining a route that handles GET/POST requests:
+   router.get('/getRoute', function(req, res){res.send('hello world');});
+   router.post('/postRoute', function(req, res){res.send('hello world, from post!');});
+
+6. Middleware
+   A function that sits between the request and the response (“in the middle”).
+   Typical tasks:
+   - parse the HTTP message body to a JSON object (body-parse)
+   - parse cookies (cookie-parser)
+   - authenticate the user and (dis)allow a request
+
+7. Is every route a middleware?
+   Router functions are Express middleware, which means that they must either complete (respond to) the request or call the next function in the chain.
